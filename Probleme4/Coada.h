@@ -187,4 +187,91 @@ public:
 
 
 	}
+
+	void afisareSumele(int dim) {
+
+		int ct = dim;
+		while (ct >= 1)
+		{
+
+			Node<T>* aux = head;
+			int s = 0;
+			for (int i = 0; i < ct; i++) {
+
+				s += aux->getData();
+				aux = aux->getNext();
+			}
+			cout << s << endl;
+
+			ct--;
+		}
+
+
+
+
+	}
+
+	void stergereaPrimElement() {
+
+		head = head->getNext();
+
+	}
+
+	void stergereUltim() {
+
+		Node<T>* aux = head;
+
+		while (aux->getNext()->getNext() != NULL)
+		{
+			aux = aux->getNext();
+		}
+
+		aux->setNext(NULL);
+
+	}
+
+	void stergerePoz(int poz) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		if (poz == 0) {
+			stergereaPrimElement();
+			return;
+		}
+
+		while (ct < poz - 1)
+		{
+			aux = aux->getNext();
+			ct++;
+		}
+
+		if (aux->getNext() == NULL) {
+			stergereUltim();
+			return;
+		}
+
+		aux->setNext(aux->getNext()->getNext());
+
+	}
+
+	void stergerePare(int dim) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() % 2 == 0) {
+				dim--;
+				i--;
+				stergerePoz(i);
+				aux = head;
+			}
+
+			aux = aux->getNext();
+
+		}
+
+	}
+
 };
