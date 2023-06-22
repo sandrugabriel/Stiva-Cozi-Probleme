@@ -104,4 +104,87 @@ public:
 
 	}
 
+	int getUltimulNr(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim - 1; i++)
+			aux = aux->getNext();
+
+		return aux->getData();
+	}
+
+	int ctIntervalAfara(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+		int ultim = getUltimulNr(dim);
+		int primul = aux->getData();
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() < primul && aux->getData() > ultim)
+				ct++;
+
+			aux = aux->getNext();
+		}
+
+		return ct;
+	}
+
+	int ctEgalUiltim(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() == getUltimulNr(dim))
+				ct++;
+
+			aux = aux->getNext();
+		}
+
+		return ct;
+
+	}
+
+	int ctNr(int nr) {
+		int ct = 0;
+		while (nr != 0)
+		{
+			ct++;
+			nr /= 10;
+		}
+		return ct;
+	}
+
+	bool verifPatratPerfect(int nr) {
+
+		int ctnr = ctNr(nr);
+		if (ctnr > 2) {
+			nr = nr / pow(10, ctnr - 2);
+		}
+
+		if (sqrt(nr) == (int)sqrt(nr))
+			return true;
+
+		return false;
+	}
+
+	void afisarePatratPerf(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (verifPatratPerfect(aux->getData()))
+				cout << aux->getData() << " ";
+
+
+			aux = aux->getNext();
+		}
+
+
+	}
 };

@@ -1,11 +1,9 @@
 #pragma once
 #include "Node.h"
 
-
 template<typename T>
 
-struct Stiva
-{
+struct Stiva {
 
 private:
 
@@ -69,5 +67,73 @@ public:
 		}
 
 	}
+
+	int divizorComun(int n, int m) {
+
+		while (m != 0)
+		{
+			int r = n % m;
+			n = m;
+			m = r;
+		}
+
+		return n;
+	}
+
+	int ctPerechiPrime(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			int n, m;
+			n = aux->getData();
+			Node<T>* nou = head;
+			for (int j = 0; j < dim; j++) {
+				m = nou->getData();
+				if (divizorComun(n, m) == 1) ct++;
+				nou = nou->getNext();
+			}
+
+			aux = aux->getNext();
+		}
+
+		return ct / 2;
+	}
+
+	bool prim(int nr) {
+
+		if (nr == 0 || nr == 1)
+			return false;
+
+		for (int i = 2; i <= nr / 2; i++)
+			if (nr % i == 0)
+				return false;
+
+		return true;
+	}
+
+	int ctNrPrime(int dim) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		for (int i = 0; i < dim; i++) {
+			if (prim(aux->getData()))
+				ct++;
+
+			aux = aux->getNext();
+		}
+
+		return ct;
+
+
+	}
+
+
+
+
 
 };

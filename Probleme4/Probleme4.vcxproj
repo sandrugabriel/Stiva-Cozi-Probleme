@@ -132,6 +132,7 @@
   <ItemGroup>
     <ClInclude Include="Coada.h" />
     <ClInclude Include="Node.h" />
+    <ClInclude Include="solutii.h" />
     <ClInclude Include="Stiva.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

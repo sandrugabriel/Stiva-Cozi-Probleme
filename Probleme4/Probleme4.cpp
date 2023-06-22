@@ -1,6 +1,6 @@
-#include <iostream>
+#include "solutii.h"
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	solutia5();
 }
