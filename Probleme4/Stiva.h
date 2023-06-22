@@ -241,4 +241,147 @@ public:
 
 	}
 
+	void addEnd(int nr) {
+
+		if (head == NULL) {
+
+			head = new Node<T>();
+
+			head->setNext(NULL);
+			head->setData(nr);
+		}
+		else {
+
+
+			Node<T>* aux = head;
+
+			while (aux->getNext() != NULL) {
+
+				aux = aux->getNext();
+			}
+
+
+			Node<T>* nou = new Node<T>();
+
+			nou->setNext(NULL);
+			nou->setData(nr);
+			aux->setNext(nou);
+
+		}
+
+
+	}
+
+	void addPoz(int nr, int poz) {
+
+
+		if (head == NULL) {
+
+			head = new Node<T>();
+
+			head->setNext(NULL);
+			head->setData(nr);
+		}
+		else
+		{
+
+			Node<T>* aux = head;
+
+			int ct = 0;
+
+			if (poz == 0) {
+				push(nr);
+				return;
+			}
+
+			while (ct < poz - 1)
+			{
+
+				aux = aux->getNext();
+				ct++;
+			}
+
+			if (aux->getNext() == NULL) {
+
+				addEnd(nr);
+				return;
+			}
+
+			Node<T>* nou = new Node<T>();
+			nou->setNext(aux->getNext());
+			nou->setData(nr);
+			aux->setNext(nou);
+
+		}
+
+
+	}
+
+	void addDublu(int dim) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() % 2 == 0) {
+				addPoz(aux->getData() * 2, i);
+				aux = head;
+			}
+
+			aux = aux->getNext();
+
+		}
+
+
+
+	}
+
+	void setPoz(int poz, int nr) {
+		Node<T>* aux = head;
+		int ct = 0;
+		while (ct < poz)
+		{
+			aux = aux->getNext();
+			ct++;
+		}
+
+		aux->setData(nr);
+
+
+	}
+
+	void inserareMini(int dim, int mini) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() == mini) {
+				setPoz(i - 1, mini);
+			}
+
+			aux = aux->getNext();
+
+		}
+
+	}
+
+	void stergereEgaleMini(int dim, int mini) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() == mini) {
+				dim--;
+				stergerePoz(i);
+				i = 0;
+				aux = head;
+			}
+
+			aux = aux->getNext();
+
+		}
+
+
+
+	}
+
 };

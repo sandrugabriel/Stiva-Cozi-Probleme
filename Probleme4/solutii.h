@@ -185,5 +185,99 @@ void solutia10() {
 	stiva.afisare();
 }
 
+/*#4386
+Se dă un vector cu n elemente numere naturale. Să se transforme vectorul, duplicând fiecare apariție a valorii minime.
+Ex:
+7
+7 9 4 2 1 6 1
+se afiseaza
+7 9 4 2 1 1 6 1 1
+*/
+void solutia11() {
+
+	int dim = 7;
+	int v[100] = { 1,6,1,2,4,9,7 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+	stiva.inserareMini(dim, stiva.mini(dim));
+	stiva.afisare();
+}
+
+/*
+#4385
+Se dă un vector cu n elemente numere naturale. Să se șteargă din vector toate elementele
+egale cu cea mai mică valoare din vector.
+Ex:
+7
+7 1 4 2 1 6 1
+se afiseaza
+7 4 2 6*/
+void solutia12() {
+
+	int dim = 7;
+	int v[100] = { 1,6,1,2,4,1,7 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+
+	stiva.stergereEgaleMini(dim, stiva.mini(dim));
+	stiva.afisare();
+}
+
+/*Se citește un vector cu n elemente, numere naturale. Să se afișeze elementele vectorului în următoarea
+ordine: primul, ultimul, al doilea, penultimul, etc.
+Ex:
+5
+2 9 1 5 8 se afiseaza 2 8 9 5 1
+*/
+void solutia13() {
+
+	int dim = 5, v[100] = { 2, 9, 1, 5, 8 };
+
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.afisarePrimUltim(dim);
+}
+
+/*#158
+ Se dă un șir cu n elemente întregi, valoare întreagă X și un număr p.
+Să se insereze pe poziția p în șir valoarea X.
+Ex:
+5 10 2
+7 3 9 1 6
+se afiseaza
+7 10 3 9 1 6*/
+void solutia14() {
+
+	int dim = 5, poz = 2, nr = 10;
+	int v[100] = { 7, 3, 9 ,1, 6 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.addPoz(nr, poz - 1);
+	coada.afisare();
+}
+
+/*
+#159
+Să se insereze în șir după fiecare element par dublul său.
+Ex:
+5
+7 3 4 1 6
+se afiseaza
+7 3 4 8 1 6 12
+*/
+void solutia15() {
+
+	int dim = 5, poz = 2, nr = 10;
+	int v[100] = { 6,1,4,3,7 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+
+	stiva.addDublu(dim);
+	stiva.afisare();
+
+
+}
 
 
