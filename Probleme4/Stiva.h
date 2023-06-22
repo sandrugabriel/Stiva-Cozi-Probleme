@@ -384,4 +384,65 @@ public:
 
 	}
 
+	bool verificareImpare(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+			if (aux->getData() % 2 == 1) {
+				return true;
+			}
+
+			aux = aux->getNext();
+		}
+
+
+
+		return false;
+	}
+
+	bool verificarePrime(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+			if (prim(aux->getData())) {
+				return true;
+			}
+
+			aux = aux->getNext();
+		}
+
+
+
+		return false;
+
+
+	}
+
+	int factorial(int n) {
+		int fact = 1;
+
+		for (int i = 1; i <= n; i++)
+			fact *= i;
+
+		return fact;
+	}
+
+	void afisareFactorial(int dim) {
+
+		Node<T>* aux = head;
+
+		int fact = factorial(dim);
+
+		for (int i = 0; i < dim; i++) {
+			if (fact % aux->getData() == 0)
+				cout << aux->getData() << " ";
+
+
+
+			aux = aux->getNext();
+		}
+
+	}
 };

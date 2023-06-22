@@ -280,4 +280,98 @@ void solutia15() {
 
 }
 
+/*
+#160
+Să se insereze în șir înaintea fiecărui element pătrat perfect rădăcina sa pătrată.
+Ex:
+5
+7 3 4 1 5
+se afiseaza
+7 3 2 4 1 1 5
+*/
+void solutia16() {
+
+	int dim = 5, poz = 2, nr = 10;
+	int v[100] = { 7 ,3 ,4, 1 ,5 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.inserareRadacina(dim);
+	coada.afisare();
+}
+
+/*#1550
+Se da un vector cu n elemente. Sa se afișeze pe ecran elementele din vector care divid factorialul numărului de elemente n.
+Ex:
+5
+16 3 71 30 25
+se afiseaza 3 30
+*/
+void solutia17() {
+
+	int dim = 5;
+	int v[100] = { 16, 3, 71, 30, 25 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+
+	stiva.afisareFactorial(dim);
+}
+
+/*#162
+Se dă un vector cu n elemente numere naturale. Determinați toate permutările circulare spre stânga ale vectorului.
+Ex:
+5
+7 2 8 4 5
+se afiseaza
+7 2 8 4 5
+2 8 4 5 7
+8 4 5 7 2
+4 5 7 2 8
+5 7 2 8 4*/
+void solutia18() {
+
+	int dim = 5;
+	int v[100] = { 7, 2,8, 4, 5 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.afisarePermutari(dim);
+}
+
+/*
+#289
+Se dă un şir cu n elemente, numere naturale. Să se verifice dacă în şir există elemente impare.
+Ex:
+5
+2 8 6 10 8
+se afiseaza 0
+*/
+void solutia19() {
+
+	int dim = 5;
+	int v[100] = { 2, 8, 6 ,10, 8 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+
+	cout << stiva.verificareImpare(dim);
+}
+
+/*
+#506
+Se dă un şir cu n elemente, numere naturale. Să se verifice dacă în şir există elemente prime.
+Ex:
+5
+21 8 6 10 8
+se afiseaza 0
+*/
+void solutia20() {
+
+	int dim = 5;
+	int v[100] = { 21, 5 ,6 ,10, 8 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+
+	cout << stiva.verificarePrime(dim);
+
+}
 
