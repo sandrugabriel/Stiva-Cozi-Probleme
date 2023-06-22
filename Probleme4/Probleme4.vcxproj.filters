@@ -29,5 +29,8 @@
     <ClInclude Include="Coada.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="solutii.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
