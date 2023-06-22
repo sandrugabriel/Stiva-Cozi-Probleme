@@ -130,6 +130,7 @@
     <ClCompile Include="Probleme4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Coada.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Stiva.h" />
   </ItemGroup>
