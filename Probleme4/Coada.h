@@ -376,4 +376,50 @@ public:
 
 	}
 
+	void permutarestangaDreapta(int dim) {
+
+		Node<T>* aux = head;
+		int i = 0;
+		int nr1 = aux->getData();
+
+		for (i = 0; i < dim - 1; i++) {
+
+			aux->setData(aux->getNext()->getData());
+
+			aux = aux->getNext();
+		}
+
+		aux->setData(nr1);
+	}
+
+	void afisarePermutari(int dim) {
+
+		Node<T>* aux = head;
+
+		for (int i = 0; i < dim; i++) {
+
+			afisare();
+			permutarestangaDreapta(dim);
+			cout << endl;
+		}
+
+
+	}
+
+	void inserareRadacina(int dim) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (verifPatratPerfect(aux->getData())) {
+				addPoz(sqrt(aux->getData()), i);
+				i++;
+			}
+
+			aux = aux->getNext();
+
+		}
+
+	}
+
 };

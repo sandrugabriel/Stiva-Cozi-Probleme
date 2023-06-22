@@ -1,7 +1,10 @@
 ﻿  Probleme4.cpp
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(415,16): warning C4244: 'argument': conversion from 'double' to 'int', possible loss of data
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(409,7): message : while compiling class template member function 'void Coada<int>::inserareRadacina(int)'
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\solutii.h(299,24): message : see the first reference to 'Coada<int>::inserareRadacina' in 'solutia16'
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\solutii.h(7,12): message : see reference to class template instantiation 'Coada<int>' being compiled
 C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(165,12): warning C4244: '=': conversion from 'double' to 'int', possible loss of data
 C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(161,7): message : while compiling class template member function 'bool Coada<int>::verifPatratPerfect(int)'
-C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(181,4): message : see the first reference to 'Coada<int>::verifPatratPerfect' in 'Coada<int>::afisarePatratPerf'
-C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\solutii.h(92,25): message : see the first reference to 'Coada<int>::afisarePatratPerf' in 'solutia5'
-C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\solutii.h(7,12): message : see reference to class template instantiation 'Coada<int>' being compiled
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\Coada.h(414,4): message : see the first reference to 'Coada<int>::verifPatratPerfect' in 'Coada<int>::inserareRadacina'
+C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\Probleme4\solutii.h(299,24): message : see the first reference to 'Coada<int>::inserareRadacina' in 'solutia16'
   Probleme4.vcxproj -> C:\Mycode\C++\Structuri de date\Probleme_PbInfo\Probleme4\x64\Debug\Probleme4.exe
