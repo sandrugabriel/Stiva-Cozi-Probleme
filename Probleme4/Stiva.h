@@ -132,8 +132,113 @@ public:
 
 	}
 
+	int maxi(int dim) {
+		Node<T>* aux = head;
+		int maxi = -1;
+
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() > maxi)
+				maxi = aux->getData();
+
+			aux = aux->getNext();
+		}
+
+		return maxi;
+	}
+
+	int mini(int dim) {
+		Node<T>* aux = head;
+		int mini = 99999;
+
+		for (int i = 0; i < dim; i++) {
+
+			if (aux->getData() < mini)
+				mini = aux->getData();
+
+			aux = aux->getNext();
+		}
+
+		return mini;
+	}
+
+	void afisare() {
+
+		Node<T>* aux = head;
+
+		while (aux != NULL)
+		{
+
+			cout << aux->getData() << " ";
+			aux = aux->getNext();
+
+		}
+
+	}
+
+	void stergereaPrimElement() {
+
+		head = head->getNext();
+
+	}
+
+	void stergereUltim() {
+
+		Node<T>* aux = head;
+
+		while (aux->getNext()->getNext() != NULL)
+		{
+			aux = aux->getNext();
+		}
+
+		aux->setNext(NULL);
+
+	}
+
+	void stergerePoz(int poz) {
+
+		Node<T>* aux = head;
+
+		int ct = 0;
+
+		if (poz == 0) {
+			stergereaPrimElement();
+			return;
+		}
+
+		while (ct < poz - 1)
+		{
+			aux = aux->getNext();
+			ct++;
+		}
+
+		if (aux->getNext() == NULL) {
+			stergereUltim();
+			return;
+		}
+
+		aux->setNext(aux->getNext()->getNext());
+
+	}
+
+	void stergereaPrime(int dim) {
+
+		Node<T>* aux = head;
+		for (int i = 0; i < dim; i++) {
+
+			if (prim(aux->getData())) {
+				dim--;
+				stergerePoz(i);
+				aux = head;
+			}
+
+			aux = aux->getNext();
+
+		}
 
 
 
+
+	}
 
 };

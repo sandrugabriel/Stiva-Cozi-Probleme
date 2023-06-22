@@ -92,5 +92,98 @@ void solutia5() {
 	coada.afisarePatratPerf(dim);
 }
 
+/*#82
+Calculaţi valoarea minima minim si valoarea maxima maxim a celor n numere date.
+Ex:
+5
+8 2 9 4 5
+se afiseaza 2 9*/
+void solutia6() {
+
+	int dim = 5;
+	int v[100] = { 8, 2, 9, 4, 5 };
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+	cout << stiva.mini(dim) << " " << stiva.maxi(dim);
+}
+
+/*#237
+Se dă un şir cu n numere naturale. Să se afişeze suma primilor n termeni din şir, apoi suma
+primilor n-1 termeni din şir, şi aşa mai departe.
+Ex:
+4
+1 7 3 4
+se afiseaza
+15
+11
+8
+1
+*/
+void solutia7() {
+
+	int dim = 4;
+	int v[100] = { 1, 7, 3, 4 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.afisareSumele(dim);
+
+}
+
+/*
+#1452
+Să se șteargă din șirul X elementul aflat pe poziția p.
+ex:
+5 2
+7 3 9 1 6
+se afiseaza 7 9 1 6*/
+void solutia8() {
+
+	int dim = 5, poz = 2;
+	int v[100] = { 7 ,3, 9, 1, 6 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.stergerePoz(poz - 1);
+	coada.afisare();
+}
+
+/*
+#1453
+Se dă un vector cu n elemente numere naturale. Să se șteargă din vector toate elementele pare.
+Ex:
+7
+7 9 4 2 1 6 5
+se afiseaza
+7 9 1 5*/
+void solutia9() {
+
+	int dim = 7;
+	int v[100] = { 7, 9, 4, 2, 1, 6, 5 };
+	for (int i = 0; i < dim; i++)
+		coada.enqueue(v[i]);
+
+	coada.stergerePare(dim);
+	coada.afisare();
+}
+
+/*#163
+Se dă un vector cu n elemente numere naturale. Să se șteargă din vector toate elementele care sunt numere prime.
+Ex:
+5
+7 8 9 17 1
+se afiseaza
+8 9 1
+*/
+void solutia10() {
+
+	int dim = 5;
+	int v[100] = {1,17,9,8,7};
+	for (int i = 0; i < dim; i++)
+		stiva.push(v[i]);
+	stiva.stergereaPrime(dim);
+	stiva.afisare();
+}
+
 
 
