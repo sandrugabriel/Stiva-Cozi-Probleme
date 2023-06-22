@@ -274,4 +274,106 @@ public:
 
 	}
 
+	void afisarePrimUltim(int dim) {
+
+		Node<T>* aux = head;
+		int d = 0;
+		for (int i = 0; i < dim; i += 2) {
+
+			if (i % 2 == 0) {
+
+				cout << aux->getData() << " ";
+
+				aux = aux->getNext();
+
+				if (d < dim / 2) {
+
+
+					int ct = 0;
+
+					Node<T>* aux1 = head;
+
+					while (ct < dim - d - 1)
+					{
+						ct++;
+						aux1 = aux1->getNext();
+					}
+
+					cout << aux1->getData() << " ";
+				}
+
+				d++;
+			}
+
+		}
+
+
+
+	}
+
+	void addStart(int  nr) {
+
+
+		if (head == NULL) {
+
+			head = new Node<T>();
+
+			head->setNext(NULL);
+			head->setData(nr);
+		}
+		else {
+			Node<T>* nou = new Node<T>();
+			nou->setNext(head);
+			nou->setData(nr);
+			head = nou;
+
+		}
+
+	}
+
+	void addPoz(int nr, int poz) {
+
+
+		if (head == NULL) {
+
+			head = new Node<T>();
+
+			head->setNext(NULL);
+			head->setData(nr);
+		}
+		else
+		{
+
+			Node<T>* aux = head;
+
+			int ct = 0;
+
+			if (poz == 0) {
+				addStart(nr);
+				return;
+			}
+
+			while (ct < poz - 1)
+			{
+
+				aux = aux->getNext();
+				ct++;
+			}
+
+			if (aux->getNext() == NULL) {
+
+				enqueue(nr);
+				return;
+			}
+
+			Node<T>* nou = new Node<T>();
+			nou->setNext(aux->getNext());
+			nou->setData(nr);
+			aux->setNext(nou);
+
+		}
+
+
+	}
+
 };
